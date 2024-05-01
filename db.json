@@ -1,0 +1,229 @@
+{
+  "auth": [
+    {
+      "id": "1",
+      "email": "admin@admin.com",
+      "password": "123456",
+      "token": "0djsau89q82989129hdsuy918h"
+    }
+  ],
+  "supplier": [
+    {
+      "id": "c2d3",
+      "name": "PT. Teknologi Indonesia",
+      "email": "teknologi@gmail.com",
+      "phone": 81233211231,
+      "address": "Jl. Soekarno Hatta, No.05, Kec. Sekupang"
+    },
+    {
+      "id": "4276",
+      "name": "Universitas Internasional Batam",
+      "email": "uib@gmail.com",
+      "phone": 7787437111,
+      "address": "Baloi-Sei Ladi, Jl. Gajah Mada, Tiban Indah, Kec. Sekupang, Kota Batam, Kepulauan Riau"
+    }
+  ],
+  "products": [
+    {
+      "name": "Laptops",
+      "description": "High-performance laptop with advanced features.",
+      "category": "electronic",
+      "quantity": "100",
+      "price": 8000000,
+      "supplier": "PT. Teknologi Indonesia - Contact: teknologi@gmail.com",
+      "id": "302d"
+    },
+    {
+      "name": "Office Chair",
+      "description": "Ergonomic office chair for comfortable seating.",
+      "category": "furniture",
+      "price": 200000,
+      "supplier": "Universitas Internasional Batam - Contact: uib@gmail.com",
+      "quantity": 180,
+      "id": "fa31"
+    },
+    {
+      "name": "bookshelf",
+      "description": "Wooden bookshelf for organizing books and decor.",
+      "category": "furniture",
+      "price": 120000,
+      "supplier": "Universitas Internasional Batam - Contact: uib@gmail.com",
+      "quantity": 15,
+      "id": "3c16"
+    },
+    {
+      "id": "9bbd",
+      "name": "keyboard",
+      "description": "hightech priority keyboard",
+      "category": "electronic",
+      "quantity": "100",
+      "price": 50000,
+      "supplier": "PT. Teknologi Indonesia - Contact: teknologi@gmail.com"
+    }
+  ],
+  "categories": [
+    {
+      "id": "71e7",
+      "name": "accessories"
+    },
+    {
+      "id": "595f",
+      "name": "electronic"
+    },
+    {
+      "id": "4c80",
+      "name": "tools"
+    },
+    {
+      "id": "de8d",
+      "name": "furniture"
+    },
+    {
+      "id": "ea51",
+      "name": "others"
+    }
+  ],
+  "purchase-report": [
+    {
+      "id": "8aaa",
+      "action": "purchasing",
+      "name": "Laptops",
+      "quantity": "100",
+      "category": "electronic",
+      "price": 10000000,
+      "total": 1000000000
+    },
+    {
+      "id": "73a6",
+      "action": "modified",
+      "name": "Laptops",
+      "quantity": "100",
+      "category": "electronic",
+      "price": 8000000,
+      "total": 800000000
+    },
+    {
+      "id": "66ad",
+      "action": "purchasing",
+      "name": "Office Chair",
+      "quantity": "200",
+      "category": "furniture",
+      "price": 200000,
+      "total": 40000000
+    },
+    {
+      "id": "2d2c",
+      "action": "purchasing",
+      "name": "bookshelf",
+      "quantity": "20",
+      "category": "furniture",
+      "price": 120000,
+      "total": 2400000
+    },
+    {
+      "id": "1967",
+      "action": "purchasing",
+      "name": "keyboard",
+      "quantity": "100",
+      "category": "electronic",
+      "price": 50000,
+      "total": 5000000
+    }
+  ],
+  "stock-out-report": [
+    {
+      "id": "4218",
+      "destination": "PT. Iguide Batam",
+      "note": "Furniture for CEO Office",
+      "name": "Office Chair",
+      "price": 200000,
+      "category": "furniture",
+      "quantity": "20",
+      "total": 4000000,
+      "created_at": "2024-05-02T01:44:49+07:00"
+    },
+    {
+      "id": "8479",
+      "destination": "PT. Iguide Batam",
+      "note": "Furniture for CEO Office",
+      "name": "bookshelf",
+      "price": 120000,
+      "category": "furniture",
+      "quantity": "5",
+      "total": 600000,
+      "created_at": "2024-05-02T01:44:49+07:00"
+    }
+  ],
+  "log": [
+    {
+      "id": "5e75",
+      "message": "added category with name accessories",
+      "timestamp": "2024-05-02T01:29:17+07:00"
+    },
+    {
+      "id": "9584",
+      "message": "added category with name electronic",
+      "timestamp": "2024-05-02T01:29:31+07:00"
+    },
+    {
+      "id": "e586",
+      "message": "added category with name tools",
+      "timestamp": "2024-05-02T01:29:39+07:00"
+    },
+    {
+      "id": "6928",
+      "message": "added category with name furniture",
+      "timestamp": "2024-05-02T01:30:16+07:00"
+    },
+    {
+      "id": "69bb",
+      "message": "added category with name others",
+      "timestamp": "2024-05-02T01:30:24+07:00"
+    },
+    {
+      "id": "bef6",
+      "message": "added supplier with name PT. Teknologi Indonesia",
+      "timestamp": "2024-05-02T01:34:18+07:00"
+    },
+    {
+      "id": "66e7",
+      "message": "added supplier with name Universitas Internasional Batam",
+      "timestamp": "2024-05-02T01:35:07+07:00"
+    },
+    {
+      "id": "f563",
+      "message": "added product with name Laptops",
+      "timestamp": "2024-05-02T01:37:00+07:00"
+    },
+    {
+      "id": "497a",
+      "message": "update product with name Laptops",
+      "timestamp": "2024-05-02T01:38:16+07:00"
+    },
+    {
+      "id": "eb21",
+      "message": "added product with name Office Chair",
+      "timestamp": "2024-05-02T01:39:14+07:00"
+    },
+    {
+      "id": "f69f",
+      "message": "added product with name bookshelf",
+      "timestamp": "2024-05-02T01:40:21+07:00"
+    },
+    {
+      "id": "2fcc",
+      "message": "added product with name keyboard",
+      "timestamp": "2024-05-02T01:41:01+07:00"
+    },
+    {
+      "id": "482e",
+      "message": "Stock Out to PT. Iguide Batam with product name Office Chair",
+      "timestamp": "2024-05-02T01:44:49+07:00"
+    },
+    {
+      "id": "0022",
+      "message": "Stock Out to PT. Iguide Batam with product name bookshelf",
+      "timestamp": "2024-05-02T01:44:49+07:00"
+    }
+  ]
+}

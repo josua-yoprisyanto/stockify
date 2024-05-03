@@ -27,12 +27,6 @@ const useSuppliers = (data: any, page: any, rowsPerPage: any) => {
   }, [data, page, rowsPerPage]);
 };
 
-const useSupplierIds = (suppliers: any) => {
-  return useMemo(() => {
-    return suppliers.map((customer: any) => customer.id);
-  }, [suppliers]);
-};
-
 const Page = () => {
   const [supplierData, setSupplierData] = useState([]);
   const [selectedSupplier, setSelectedSupplier] = useState(0);
@@ -45,7 +39,6 @@ const Page = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const suppliers = useSuppliers(supplierData, page, rowsPerPage);
-  const suppliersIds = useSupplierIds(suppliers);
 
   const handlePageChange = useCallback((event: any, value: any) => {
     setPage(value);

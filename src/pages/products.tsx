@@ -10,7 +10,6 @@ import {
   SvgIcon,
   Typography,
 } from "@mui/material";
-import { useSelection } from "src/hooks/use-selection";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
 import { applyPagination } from "src/utils/apply-pagination";
 import { SearchBar } from "src/components/SearchBar";
@@ -20,19 +19,12 @@ import { ProductTable } from "src/table/ProductTable";
 import PlusIcon from "@heroicons/react/24/solid/PlusIcon";
 import AddProductModal from "src/components/Modal/AddProductModal";
 import ProductDetailModal from "src/components/Modal/ProductDetailModal";
-import moment from "moment";
 import { handleAddLog } from "src/utils/addLog";
 
 const useProducts = (product: any, page: any, rowsPerPage: any) => {
   return useMemo(() => {
     return applyPagination(product, page, rowsPerPage);
   }, [page, rowsPerPage, product]);
-};
-
-const useProductIds = (products: any) => {
-  return useMemo(() => {
-    return products.map((product: any) => product.id);
-  }, [products]);
 };
 
 const Page = () => {
@@ -47,7 +39,6 @@ const Page = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const products = useProducts(productData, page, rowsPerPage);
-  const productsIds = useProductIds(products);
 
   const handlePageChange = useCallback((event: any, value: any) => {
     setPage(value);

@@ -10,7 +10,6 @@ import {
   SvgIcon,
   Typography,
 } from "@mui/material";
-import { useSelection } from "src/hooks/use-selection";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
 import { applyPagination } from "src/utils/apply-pagination";
 import { SearchBar } from "src/components/SearchBar";
@@ -25,12 +24,6 @@ const useReports = (report: any, page: any, rowsPerPage: any) => {
   }, [page, rowsPerPage, report]);
 };
 
-const useReportIds = (reports: any) => {
-  return useMemo(() => {
-    return reports.map((report: any) => report.id);
-  }, [reports]);
-};
-
 const Page = () => {
   const [reportData, setReportData] = useState([]);
 
@@ -43,7 +36,6 @@ const Page = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const reports = useReports(reportData, page, rowsPerPage);
-  const reportsIds = useReportIds(reports);
 
   const handlePageChange = useCallback((event: any, value: any) => {
     setPage(value);

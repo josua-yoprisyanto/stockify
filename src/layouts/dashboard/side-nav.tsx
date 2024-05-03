@@ -2,7 +2,16 @@ import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import PropTypes from "prop-types";
 import ChevronUpDownIcon from "@heroicons/react/24/solid/ChevronUpDownIcon";
-import { Box, Divider, Drawer, Stack, SvgIcon, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Drawer,
+  Stack,
+  SvgIcon,
+  Theme,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { Scrollbar } from "src/components/scrollbar";
 import { inputItems, items } from "./config";
 import { SideNavItem } from "./side-nav-item";
@@ -16,7 +25,7 @@ interface SideNavProps {
 export const SideNav = (props: SideNavProps) => {
   const { open, onClose } = props;
   const pathname = usePathname();
-  const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+  const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
 
   const content = (
     <Scrollbar
@@ -92,7 +101,7 @@ export const SideNav = (props: SideNavProps) => {
               m: 0,
             }}
           >
-            {items.map((item) => {
+            {items.map((item: any) => {
               const haveDropdown = item.dropdowns !== undefined;
               const active = !haveDropdown
                 ? item.path
@@ -147,7 +156,7 @@ export const SideNav = (props: SideNavProps) => {
               m: 0,
             }}
           >
-            {inputItems.map((item) => {
+            {inputItems.map((item: any) => {
               const active = item.path ? pathname === item.path : false;
               const haveDropdown = item.dropdowns !== undefined;
 

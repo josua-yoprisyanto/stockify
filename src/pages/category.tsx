@@ -11,7 +11,6 @@ import {
   SvgIcon,
   Typography,
 } from "@mui/material";
-import { useSelection } from "src/hooks/use-selection";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
 import { applyPagination } from "src/utils/apply-pagination";
 import { SearchBar } from "src/components/SearchBar";
@@ -19,19 +18,12 @@ import axios from "axios";
 import { CSVLink } from "react-csv";
 import AddCategoryModal from "src/components/Modal/AddCategoryModal";
 import { CategoryTable } from "../table/CategoryTable";
-import moment from "moment";
 import { handleAddLog } from "src/utils/addLog";
 
 const useCategories = (category: any, page: any, rowsPerPage: any) => {
   return useMemo(() => {
     return applyPagination(category, page, rowsPerPage);
   }, [page, rowsPerPage, category]);
-};
-
-const useCategoryIds = (categories: any) => {
-  return useMemo(() => {
-    return categories.map((category: any) => category.id);
-  }, [categories]);
 };
 
 const Page = () => {

@@ -24,12 +24,6 @@ const useLogs = (log: any, page: any, rowsPerPage: any) => {
   }, [page, rowsPerPage, log]);
 };
 
-const useLogIds = (logs: any) => {
-  return useMemo(() => {
-    return logs.map((log: any) => log.id);
-  }, [logs]);
-};
-
 const Page = () => {
   const [logData, setLogData] = useState([]);
 
@@ -42,7 +36,6 @@ const Page = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const logs = useLogs(logData, page, rowsPerPage);
-  const logsIds = useLogIds(logs);
 
   const handlePageChange = useCallback((event: any, value: any) => {
     setPage(value);

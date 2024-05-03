@@ -3,6 +3,12 @@ import PropTypes from "prop-types";
 import { Box, ButtonBase } from "@mui/material";
 import { useState } from "react";
 
+interface DropdownItem {
+  title: string;
+  path: string;
+  icon?: React.ReactNode;
+}
+
 interface SideNavItemProps {
   active?: boolean;
   disabled?: boolean;
@@ -11,8 +17,8 @@ interface SideNavItemProps {
   path?: string;
   title: string;
   haveDropdown?: boolean;
-  dropdowns?: any;
-  pathname: string;
+  dropdowns?: DropdownItem[];
+  pathname?: string; // Making pathname optional
 }
 
 export const SideNavItem = (props: SideNavItemProps) => {
@@ -43,21 +49,21 @@ export const SideNavItem = (props: SideNavItemProps) => {
         }
     : {};
 
-  const DropdownComponent = ({ dw }) => {
-    const dropdownLinkProps = dw.path
+  const DropdownComponent = ({ dropdown }) => {
+    const dropdownLinkProps = dropdown.path
       ? external
         ? {
             component: "a",
-            href: dw.path,
+            href: dropdown.path,
             target: "_blank",
           }
         : {
             component: NextLink,
-            href: dw.path,
+            href: dropdown.path,
           }
       : {};
 
-    let activeTab = dw.path === pathname;
+    let activeTab = dropdown.path === pathname;
 
     return (
       <ButtonBase
@@ -81,7 +87,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
         }}
         {...dropdownLinkProps}
       >
-        {dw.icon && (
+        {dropdown.icon && (
           <Box
             component="span"
             sx={{
@@ -95,7 +101,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
               }),
             }}
           >
-            {dw.icon}
+            {dropdown.icon}
           </Box>
         )}
         <Box
@@ -116,7 +122,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
             }),
           }}
         >
-          {dw.title}
+          {dropdown.title}
         </Box>
       </ButtonBase>
     );
@@ -186,7 +192,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
 
       {haveDropdown &&
         showDropdown &&
-        dropdowns.map((dw, index) => <DropdownComponent dw={dw} key={index} />)}
+        dropdowns.map((dropdown, index) => <DropdownComponent dropdown={dropdown} key={index} />)}
     </li>
   );
 };

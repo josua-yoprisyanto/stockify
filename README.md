@@ -28,9 +28,3 @@ npx json-server db.json --port 8000
 yarn dev
 ```
 
-## Note
-
-- if there’s the problem, try to restart the json server or restart the next.js
-- make sure the auth on db.json contain email, password and token
-- since JSONPlaceholder doesn’t have a foreign key, so there might be some actions that don’t impact to other related features (ex: delete supplier doesn’t impact products)
-- Redux was not used due to the small scale of the project
